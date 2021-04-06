@@ -10,7 +10,7 @@ The ALB will receive incoming traffic from internet only on speficic ports.
 
 The architecture is the following:
 
-![Architecture](./miscellaneous/aws_network_project.svg)
+![Architecture](./images/aws_network_project.svg)
 
 ## Up and Running
 
