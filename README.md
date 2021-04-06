@@ -15,12 +15,6 @@ The architecture is the following:
 ## Up and Running
 
 ```bash
-# up
-terraform init && \
-  terraform validate && \
-  terraform plan && \
-  terraform apply -auto-approve
-
-# down
-terraform destroy -auto-approve
+chmod +x deploy.sh && \
+  bash deploy.sh
 ```
