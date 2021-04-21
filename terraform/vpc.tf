@@ -75,7 +75,7 @@ resource "aws_route_table_association" "assoc_route_public" {
 ######## PRIVATE NETWORK ########
 resource "aws_subnet" "private_subnet" {
   count             = length(var.aws_azs)
-  cidr_block        = cidrsubnet(aws_vpc.vpc_0.cidr_block, 8, count.index + length(var.aws_azs)) # 10.0.0.0/24, 10.0.1.0/24, 10.0.2.0/24, ...
+  cidr_block        = cidrsubnet(aws_vpc.vpc_0.cidr_block, 8, count.index + length(var.aws_azs)) # 10.0.3.0/24, 10.0.4.0/24, 10.0.5.0/24, ...
   availability_zone = [for az in var.aws_azs : format("%s%s", var.aws_region, az)][count.index]  # e.g. ["sa-east-1a", "sa-east-1b", "sa-east-1c"]
 
   map_public_ip_on_launch = false
