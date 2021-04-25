@@ -5,7 +5,7 @@ output "lb" {
 }
 
 output "eip" {
-  value       = aws_eip.nat_eip
+  value       = aws_eip.nat_eip.*
   sensitive   = false
   description = "Output the EIP"
 }

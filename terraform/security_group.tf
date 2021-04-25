@@ -40,11 +40,18 @@ resource "aws_security_group" "instance_sg" {
   }
 
   ######## inbound rules ########
-  # only allow incoming traffic from security_group
+  # only allow HTTP and HTTPS from security_group
   ingress {
-    from_port       = 0
-    to_port         = 0
-    protocol        = "-1"
+    from_port       = 80
+    to_port         = 80
+    protocol        = "tcp"
+    security_groups = [aws_security_group.alb_sg.id]
+  }
+
+  ingress {
+    from_port       = 443
+    to_port         = 443
+    protocol        = "tcp"
     security_groups = [aws_security_group.alb_sg.id]
   }
 }
