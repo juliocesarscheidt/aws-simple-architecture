@@ -78,7 +78,7 @@ resource "aws_autoscaling_attachment" "instance_asg_attachment" {
   depends_on = [aws_autoscaling_group.instance_asg, aws_alb_target_group.application-lb-tg]
 }
 
-######## SPOT ########
+####### SPOT ########
 resource "aws_launch_template" "spot_launch_template" {
   name = "spot_launch_template"
 

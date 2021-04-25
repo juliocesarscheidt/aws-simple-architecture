@@ -1,3 +1,4 @@
 resource "aws_eip" "nat_eip" {
-  vpc = true
+  count = length(var.aws_azs)
+  vpc   = true
 }

@@ -25,7 +25,7 @@ resource "aws_route53_record" "alb_record_www" {
   zone_id         = data.aws_route53_zone.root_zone.zone_id
   name            = "www.cluster.${var.root_domain}"
   type            = "CNAME"
-  ttl             = 5
+  ttl             = 60
 
   records = ["cluster.${var.root_domain}"]
 
