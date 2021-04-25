@@ -9,7 +9,7 @@ export AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION:?'[ERROR] Variable AWS_DEFAULT_RE
 GIT_BRANCH_NAME="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
 BRANCH_NAME="${TRAVIS_BRANCH:-$GIT_BRANCH_NAME}"
 
-if [ "$BRANCH_NAME" = 'master' -o "$BRANCH_NAME" = 'main' ]; then
+if [ "$BRANCH_NAME" = 'master' ] || [ "$BRANCH_NAME" = 'main' ]; then
   export WORKSPACE='production'
 else
   export WORKSPACE='development'
